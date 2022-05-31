@@ -1,14 +1,24 @@
-n = int(input('what number would you like to start from?: ')) 
-while True: 
-  p = 1 
-  nMultiples = []
-  if n == 1 or n == 0:
-    n = n + 1
-  while p <= n: 
-    if n % p == 0: 
-      nMultiples.append(p)
-    p = p + 1
-  i = len(nMultiples)
-  if i == 2: 
-    print(f"{n} is a prime number")
-  n = n + 1 
+def check_prime(n):
+  num = int(round(n / 2 , 0))
+  for i in range(2,num):
+    if n % i == 0:
+      return False
+  return True
+
+def main():
+  i = 1
+  while True:
+    if i == 1:
+      pass
+    elif i == 2:
+      print(2)
+    elif i == 3:
+      print(3)
+    elif check_prime(i) == True:
+      print(i)
+    else:
+      pass  
+    i += 1
+
+if __name__ == '__main__':
+  main()
